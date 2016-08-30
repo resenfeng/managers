@@ -1,0 +1,6 @@
+[ 2016-08-30T14:19:32+08:00 ] 127.0.0.1 /managers/index.php/ClubManager/clubManager
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+ERR: 无法加载模块:ClubManager
+
