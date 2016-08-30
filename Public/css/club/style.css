@@ -1842,7 +1842,7 @@ h3.count.text-light {
 .coffee-top i {
   position: absolute;
   top: 84%;
-  background: url(../../images/club/1.png)no-repeat center;
+  background: url(../../images/common/1.png)no-repeat center;
   width: 80px;
   height: 80px;
   display: block;
@@ -2082,7 +2082,7 @@ h2.form-heading {
   width: 100%;
 }
 body#login{
-  background: url(../../images/club/bg.jpg)no-repeat;
+  background: url(../../images/common/bg.jpg)no-repeat;
   background-size:cover;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -2432,7 +2432,7 @@ h3.count.text-light {
 }
 .coffee-top i {
   top: 70%;
-  background: url(../../images/club/1.png)no-repeat center;
+  background: url(../../images/common/1.png)no-repeat center;
   left: 31%;
   background-size: 70%;
 }
@@ -2562,7 +2562,7 @@ ul.new li.new_left, ul.new li.new_right {
 }
 .coffee-top i {
   top: 88%;
-  background: url(../../images/club/1.png)no-repeat center;
+  background: url(../../images/common/1.png)no-repeat center;
   left: 44%;
   background-size: 70%;
 }

@@ -30,7 +30,6 @@ class LoginRegController extends Controller
                         // 登录成功，设置session
                         session('user_id', $result ['user_id']);
                         session('user_name', $result ['user_name']);
-
                         //跳转页面
                         $this->success('登录成功！',U('Admin/LoginReg/login'),3);
                     } else {
@@ -45,18 +44,26 @@ class LoginRegController extends Controller
                     'admin_password' => md5(I('post.user_password'))
                 );
                 $table = M('admin');
-                $cond = 'admin_name = '.$data['user_name'];
-                $exit = $table->where($cond)->find();
+                $cond = 'admin_name = '.$data['admin_name'];
+                $exit = $table->where($data)->find();
                 if ($exit) {
-                    $result = $table->where($data)->field('admin_id,admin_name,admin_password,admin_club_name')->find();
-                    if ($result && ($data['user_password'] === $result['admin_password'])) {
+                    $result = $table->where($data)->field('admin_id,admin_name,admin_password,admin_type,admin_club_name')->find();
+                    if ($result && ($data['admin_password'] === $result['admin_password'])) {
 
                         // 登录成功，设置session
                         session('admin_id', $result ['admin_id']);
                         session('admin_name', $result ['admin_name']);
-
-                        //跳转页面
-                        $this->success(U('Admin/LoginReg/login'));
+//                        $this->success('',U('Admin/ClubManager/clubManage'));
+                        if ($result['admin_type'] === 1){
+                            //跳转页面
+//                            $this->success(U('Admin/LoginReg/login'));
+                            $this->redirect(U('Admin/LoginReg/login'));
+                        }else{
+                            //跳转页面
+//                            $this->success(U('Admin/ClubManager/clubManage'));
+//                            $this->success(U('Admin/LoginReg/register'));
+                            $this->redirect(U('Admin/ClubManager/clubManage'));
+                        }
                     } else {
                         $this->error('帐号密码错误！', U('Admin/LoginReg/login'));
                     }
