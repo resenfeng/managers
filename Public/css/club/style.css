@@ -10,6 +10,14 @@ html, body{
   	background:#000;
   	overflow-x: hidden;
 }
+.login-radio{
+    position:relative;
+    left: 15%;
+    
+}
+.label_radio{
+    margin-top: 4%;
+}
 body a{
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -22,7 +30,7 @@ body a{
 }
 .registerbottom{
   text-align: center;
-  color: #999;
+  color: #ffffff;
    margin: 10px 0 0px 0px;
 }
 .select1{
@@ -39,6 +47,16 @@ body a{
    overflow: hidden;
 
 }
+.styled-select{
+    margin: 50px -10px -30px 0px;
+    position: relative;
+    left: 40%;
+
+
+}
+.styled-select b[type="text"]{
+    color: #ffffff;
+}
 .styled-select select{
      width: 180px;
    height: 32px;
@@ -51,6 +69,9 @@ body a{
 .zhuce{
   text-align: center;
   position:static;
+    color: #fffafb;
+    margin-top: 10px;
+
   
 }
 
@@ -113,7 +134,7 @@ body a{
 }
 .navbar .navbar-nav li .dropdown-menu li a .label {
   position: absolute;
-  right: 10px;
+  right: 100px;
   top: 11px;
 }
 .copyrights{
@@ -908,9 +929,10 @@ canvas#doughnut, canvas#line, canvas#polarArea, #bar, #pie, #radar{
 .form-control1, .form-control_2.input-sm{
   border: 1px solid #e0e0e0;
   border-color: #66ff66;
+    border:3px;
   padding: 5px 8px;
   color: #616161;
-  background: #fff;
+    background-color: rgba(247, 247, 247, 0.5);
   box-shadow: none !important;
   width:300px;
   font-size: 0.85em;
@@ -920,18 +942,19 @@ canvas#doughnut, canvas#line, canvas#polarArea, #bar, #pie, #radar{
   -webkit-appearance: none;
 }
 .form-control3{
-  margin: 15px 0 10px 0px;
+  margin: 4px 0 15px 0px;
   border: 1px solid #e0e0e0;
   border-color: #66ff66;
+    border:3px;
   padding: 5px 8px;
   color: #616161;
-  background: #fff;
+    background-color: rgba(247, 247, 247, 0.5);
   box-shadow: none !important;
   width: 300px;
   font-size: 0.85em;
   font-weight: 300;
   height: 50px;
-  border-radius: 0;
+  border-radius: 10px;
   -webkit-appearance: none;
 
 }
@@ -2072,6 +2095,17 @@ td.head {
   width: 100%;
   padding: 50px 0;
 }
+.login-logo2 {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+    padding: 0px 0;
+}
+
 h2.form-heading {
   margin: 0;
   text-align: center;
@@ -2097,17 +2131,19 @@ body#login{
 .app-cam input[type="text"] {
   width: 300px;
   padding: 15px;
-  color: #999;
+    color: #000000;
   font-size: 0.85em;
   outline: none;
   font-weight: 300;
-  border-color: #66ff66;
-  background:white;
+  border-color: rgba(102, 255, 102, 0.7);
+    border: 30px;
+  background-color: rgba(247, 247, 247, 0.5);
   margin:0 0 1em 0;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
+
 }
 .app-cam input[type="button"] {
   
@@ -2122,11 +2158,13 @@ body#login{
   background:#33ff99;
 
   
-  border-radius: 2px;
+  border-radius: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
 }
+
+
 .app-cam input[type="text1"] {
   width: 150px;
   padding: 15px;
@@ -2136,9 +2174,9 @@ body#login{
   font-weight: 300;
 
   border-color: #66ff66;
-  background:white;
+    background-color: rgba(247, 247, 247, 0.5);
  
-  border-radius: 2px;
+  border-radius: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
@@ -2152,10 +2190,11 @@ body#login{
   font-weight: 300;
 
   border-color: #66ff66;
-  background:white;
+    background-color: rgba(247, 247, 247, 0.5);
+    border: 30px;
   margin:0 0 1em 0;
   border-radius: 2px;
-  -webkit-border-radius: 2px;
+  -webkit-border-radius: 10px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
 }
@@ -2229,18 +2268,26 @@ p.sign a, ul.new li.new_left p a{
 ul.new li.new_right{
   float: right;
 }
-.app-cam p {
-  color:#999;
-  
+.login-radio p {
+  color: #f8f4ff;
+  font-family: "Wingdings 2";
   margin: 1em 0;
+    font-size: 20px;
 }
+
 .app-cam b[type="text"] {
-  color:#999;
+  color: #999;
   font-weight:300;
   ont-size: 0.85em;
   margin: 1em 0;
 }
-
+.app-cam b[type="text1"] {
+    color: #999;
+    font-weight:300;
+    ont-size: 0.85em;
+   position: relative;
+    top: 30%;
+}
 .form-signin a, .registration, .login-body label {
   margin: 1em 0 0 0;
   font-weight: 300;

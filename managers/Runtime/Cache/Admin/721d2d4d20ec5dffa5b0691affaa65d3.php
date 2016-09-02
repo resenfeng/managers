@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="ClubManage.html">社团管理</a>
+                <a class="navbar-brand" href="<?php echo U('Admin/ClubManager/clubManage');?>">社团管理</a>
 
             </div>
             <!-- /.navbar-header -->
@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="Clubmanage.html"><i class="fa fa-dashboard fa-fw nav_icon"></i>社团管理</a>
+                            <a href="<?php echo U('Admin/ClubManager/clubManage');?>"><i class="fa fa-dashboard fa-fw nav_icon"></i>社团管理</a>
 
                         </li>
                        
@@ -142,13 +142,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-indent nav_icon"></i>社团信息修改<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="Presidium.html">主席团</a>
+                                    <a href="<?php echo U('Admin/ClubManager/managersList');?>">主席团</a>
                                 </li>
                                 <li>
-                                    <a href="Member.html">会员</a>
+                                    <a href="<?php echo U('Admin/ClubManager/memberManager');?>">会员</a>
                                 </li>
                                 <li>
-                                    <a href="ClubInfo.html">社团信息</a>
+                                    <a href="<?php echo U('Admin/ClubManager/clubInfo');?>">社团信息</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -159,12 +159,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-check-square-o nav_icon"></i>申请<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="Activity.html">活动申请</a>
+                                    <a href="<?php echo U('Admin/ClubManager/activityApply');?>">活动申请</a>
                                 </li>
                                 <li>
-                                    <a href="Found.html">经费报销</a>
+                                    <a href="<?php echo U('Admin/ClubManager/remApply');?>">经费报销</a>
                                 </li>
-                                <li><a href="PlaceForms.html">场地申请</a>
+                                <li><a href="<?php echo U('Admin/ClubManager/placeApply');?>">场地申请</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -173,13 +173,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-table nav_icon"></i>评选资料提交<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="TenBest.html">十佳</a>
+                                    <a href="<?php echo U('Admin/ClubManager/tenBestApply');?>">十佳</a>
                                 </li>
                                 <li>
-                                    <a href="StarLevel.html">星级</a>
+                                    <a href="<?php echo U('Admin/ClubManager/starApply');?>">星级</a>
                                 </li>
                                 <li>
-                                    <a href="MyFavorite.html">我的最爱</a>
+                                    <a href="<?php echo U('Admin/ClubManager/myFavoriteApply');?>">我的最爱</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -188,16 +188,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-sitemap fa-fw nav_icon"></i>社团信息展示<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="Information.html">俱乐部简介</a>
+                                    <a href="<?php echo U('Admin/ClubManager/setShowInfo');?>">俱乐部简介</a>
                                 </li>
                                 <li>
-                                    <a href="Information.html">俱乐部架构</a>
+                                    <a href="<?php echo U('Admin/ClubManager/setShowInfo');?>">俱乐部架构</a>
                                 </li>
                                 <li>
-                                    <a href="Information.html">俱乐部招聘</a>
+                                    <a href="<?php echo U('Admin/ClubManager/setShowInfo');?>">俱乐部招聘</a>
                                 </li>
                                 <li>
-                                    <a href="Information.html">俱乐部活动</a>
+                                    <a href="<?php echo U('Admin/ClubManager/setShowInfo');?>">俱乐部活动</a>
                                 </li>
                                 
                             </ul>

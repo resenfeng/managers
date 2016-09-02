@@ -14,9 +14,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="__PUBLIC__/css/club/font-awesome.css" rel="stylesheet">
 	<!-- jQuery -->
 	<script src="__PUBLIC__/js/club/jquery.min.js"></script>
-
-
-
 	<!----webfonts--->
 	<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 	<!---//webfonts--->
@@ -29,29 +26,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="login-logo">
 	<a ><img src="__PUBLIC__/images/index/logo1.png" width="240" length="240" alt=""/></a>
 </div>
+
 <div class="app-cam">
-
-
 	<form action="{:U('Admin/LoginReg/login')}" method="post" id="form" name="user_form">
-		<div style="width:200px;" class="select1">
-			<div style="width:100px;float:left;"><b>帐号登录</b></div>
-			<div style="width:100px;float:left;">
-				<select name="user_type">
-					<option name="seu" value="admin">学团联账号</option>
-					<option name="club" value="club">社团账号</option>
-					<option name="stu" value="student">学生账号</option>
+		<div class="login-radio">
+			<p>
+				<label class="label_radio">
+					<input type="radio" name="user_type" value="student" checked="">学生
+				</label>
+				<label class="label_radio">
+					<input type="radio" name="user_type" value="seu" >学团联
+				</label>
 
-				</select>
-			</div>
+				<label class="label_radio">
+					<input type="radio" name="user_type" value="club">社团
+				</label>
+			</p>
 		</div>
 		<input type="text" class="text" id="account" name="user_name" value="" placeholder="请输入账号（学生账户为一卡通号）">
 		<input type="password" id="pwd" name="user_password" value="" placeholder="密码" >
-		<div class="submit"><input type="submit" id="login" name="login" value="登录" onclick="return check();"></div>
+		<div class="submit">
+			<input type="submit" id="loginSubmit" name="login" value="登录" onclick="return check();">
+		</div>
+	</form>
 </div>
-<div class="loginbottom">
-	<p align="center"><span align="right"><a  href="{:U('Admin/LoginReg/register')}">注册新账号</a></span><b>|</b><span><a href="#">忘记密码?</a></span></p>
-</div>
-</form>
 
+<div class="loginbottom">
+	<p align="center">
+		<span align="right">
+			<a  href="{:U('Admin/LoginReg/register')}">注册新账号</a>
+		</span>
+		<b>|</b>
+		<span>
+			<a href="#">忘记密码?</a>
+		</span>
+	</p>
+</div>
 </body>
 </html>

@@ -127,16 +127,41 @@
    if(isEmpty(vacode,"请填写验证码！")){
     return false;
    }
-  //  if (R('Verify/sssss')){
-  //       alert("验证码填写错误ssfsfsf！");
-  //        vacode.value="";
-  //         vacode.focus();
-  //         return false;
+
+  //  if(vacode.value!=user_form.user_vacode.value){
+  //   alert("验证码填写错误！");
+  //    vacode.value="";
+  //     vacode.focus();
+  //     return false;
   //  }
-   if(vacode.value!=user_form.user_vacode.value){
-    alert("验证码填写错误！");
-     vacode.value="";
-      vacode.focus();
-      return false;
-   }
+      var abcd = 0;
+      var user = vacode.value;
+      alert(user);
+      $.ajax({
+          type: "post",
+          async: false,
+          // url: "http://localhost/managers4/index.php/Admin/Verify/verifyCheck",
+          url: "http://58.213.164.146:8011/managers/index.php/Admin/Verify/verifyCheck",
+          data: {
+              "code" : user
+          },
+
+          success:function (data) {
+              // alert("验证码提交成功！");
+              var str = data;
+              if (str == "验证码错误"){
+                  abcd = 1;
+                  alert(str);
+              }
+          },
+          error:function (data) {
+              alert("验证码提交失败！");
+          }
+      })
+
+      if (abcd == 1){
+          vacode.value="";
+          vacode.focus();
+          return false;
+      }
   }
