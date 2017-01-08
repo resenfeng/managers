@@ -1,0 +1,382 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+    <title>站内信</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+                Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/managers/Public/css/common/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="/managers/Public/css/common/style.css" rel='stylesheet' type='text/css' />
+    <link href="/managers/Public/css/common/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="/managers/Public/js/common/jquery.min.js"></script>
+    <!-- chart -->
+    <script src="/managers/Public/js/common/Chart.js"></script>
+
+    <link href="/managers/Public/css/common/custom.css" rel="stylesheet">
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/managers/Public/js/common/metisMenu.min.js"></script>
+    <script src="/managers/Public/js/common/custom.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/managers/Public/js/common/bootstrap.min.js"></script>
+    <!-- //chart -->
+    <style>
+        /**站内信css*/
+        .mail{
+        }
+        th{
+            text-align:center;
+        }
+        td
+        {
+            text-align:center;
+        }
+
+        /*站内信列表*/
+        #table_all{
+            margin: 0px 50px;
+
+        }
+        #page-wrapper{
+            background-image: url("/managers/Public/images/common/bg.jpg");
+            background-size: 100%;
+            background-attachment: fixed;
+            min-height: 1000px;
+            height: auto;
+        }
+        .div-a{
+            position: absolute;
+            top: 20%;
+            left: 23%;
+            width: 1000px;
+            height: auto;
+            border-radius: 10px;
+        }
+        #mail_head{
+            background-color: rgba(62, 255, 253, 0.42);
+            position: relative;
+            padding: 15px;
+            height: 60px;
+            margin:  0px 50px;
+        }
+        #write{
+            position: relative;
+            left: 10%;
+        }
+        #remark{
+            position: relative;
+            left: 40%;
+            top:-20px;
+        }
+        .table_head{
+            padding: 5px;
+        }
+
+        /*写信*/
+        .mail_type{
+            position: absolute;
+            left: 20%;
+            top: 20%;
+        }
+        .mail_theme{
+            position: absolute;
+            left: 20%;
+            top: 30%;
+        }
+        #mail_theme{
+            position: absolute;
+            left: 130%;
+            top: 0%;
+        }
+        .mail_receive{
+            position: absolute;
+            left: 20%;
+            top: 40%;
+        }
+        .mail_article{
+            position: absolute;
+            left: 20%;
+            top: 50%;
+
+        }
+        #mail_article{
+            width: 300%;
+        }
+        .submit{
+            position: absolute;
+            left: 30%;
+            top: 90%;
+        }
+        .back{
+            position: absolute;
+            left: 50%;
+            top: 90%;
+        }
+
+        /*阅读*/
+        .rmail_type{
+            position: absolute;
+            left: 20%;
+            top: 20%;
+        }
+        .rmail_theme{
+            position: absolute;
+            left: 20%;
+            top: 30%;
+        }
+        .form1{
+            border-radius: 8px;
+
+            border-color: rgba(19, 212, 87, 0.53);
+            background-color: rgba(244, 244, 255, 0.58);
+        }
+        #rmail_theme{
+            position: absolute;
+            left: 160%;
+            top: 0%;
+        }
+        .rmail_article{
+            position: absolute;
+            left: 20%;
+            top: 40%;
+
+        }
+        #rmail_article{
+            width: 300%;
+        }
+
+        .rback{
+            position: absolute;
+            left: 40%;
+            top: 85%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        //判断写信返回逻辑
+        $(document).ready(function () {
+            $(".write_form").hide();
+            $(".read_form").hide();
+
+            $("#write").click(function () {
+                $(".mail").hide();
+                $(".write_form").show();
+            })
+            $(".read").click(function () {
+                var vid = $(this).attr("data-vid");
+                //后台返回的结果
+                var result;
+                $.ajax({
+                    type: "post",
+                    url: "index.php/Admin/Administrator/messageDetail",
+                    async: false,
+                    dataType: "json",
+                    data: {
+                        "id": vid
+                    },
+
+                    success: function (data) {
+                        var str = eval(data);
+                        result = str;
+                    },
+                    error: function (data) {
+                        alert("ajax操作失败");
+                    }
+                })
+
+                document.getElementById("rmail_type").value = result["msg_level"];
+                document.getElementById("rmail_theme").value = result["msg_theme"];
+                document.getElementById("rmail_article").value = result["msg_context"];
+
+                $(".mail").hide();
+                $(".read_form").show();
+                })
+
+            $(".back").click(function () {
+                $(".write_form").hide();
+                $(".mail").show();
+            })
+            $(".rback").click(function () {
+                history.go(0);
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="<?php echo U('Admin/Administrator/adminManage');?>">学团联管理</a>
+        </div>
+        <!--显示站内信模块和个人账户-->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="/managers/Public/images/common/1.png" alt=""/><span class="badge"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu-header text-center">
+                        <strong>账户设置</strong>
+                    <li class="m_2"><a href="<?php echo U('Admin/LoginReg/editPwd');?>"><i class="fa fa-wrench"></i>修改密码</a></li>
+                    <li class="m_2"><a href="<?php echo U('Admin/LoginReg/logout');?>"><i class="fa fa-lock"></i>退出当前账户</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!--显示站内信模块和个人账户-->
+        <!--设置搜索-->
+        <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+        </form>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="#"><i class="fa fa-check-square-o nav_icon"></i>申请审批<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="#">活动审批<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li><a href="<?php echo U('Admin/Administrator/normalActApply');?>">常规活动</a></li>
+                                    <li><a href="<?php echo U('Admin/Administrator/spActApply');?>">文体专项活动</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">场地审批<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li><a href="<?php echo U('Admin/Administrator/indoorApply');?>">室内场地</a></li>
+                                    <li><a href="<?php echo U('Admin/Administrator/outdoorApply');?>">室外场地</a></li>
+                                </ul>
+
+                            <li><a href="<?php echo U('Admin/Administrator/reimbursement');?>">报销审核</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-indent nav_icon"></i>社团管理<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="<?php echo U('Admin/Administrator/getViolate');?>">违规登记</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/clubWarning');?>">预警社团</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/clubApply');?>">试成立审批</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/getBriefClub');?>">社团列表</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<?php echo U('Admin/Administrator/message');?>"><i class="fa fa-envelope nav_icon"></i>站内信</a></li>
+                    <li>
+                        <a href="widgets.html"><i class="fa fa-flask nav_icon"></i>资料接收<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="<?php echo U('Admin/Administrator/bestClub');?>">十佳</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/starClub');?>">星评</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/favoClub');?>">我最喜爱</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap fa-fw nav_icon"></i>修改主页信息<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="<?php echo U('Admin/Administrator/actTrailer');?>">活动预告</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/brilliantClub');?>">社彩缤纷</a></li>
+                            <li><a href="<?php echo U('Admin/Administrator/pictureModify');?>">轮播图片及信息</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper">
+        <!--    主席团信息-->
+
+        <div class="mail bs-example4 div-a">
+            <div id="head_title">
+                <h2 align="center">站内信</h2>
+            </div>
+            <div id="mail_head" >
+                <tr>
+                    <td><button id="write" class="btn-default btn" onclick="writeMail()">写信</button></td>
+                    <td><p id="remark" >红色为紧急，黑色为普通</p></td>
+                </tr>
+            </div>
+            <table id="table_all" align="center" border="1"  width="91%" >
+                <thead>
+                <div class="table_head">
+                    <tr>
+
+                        <td width="50px">状态</td>
+                        <td width="100px">发件人</td>
+                        <td width="200px">主题</td>
+                        <td width="100px">时间</td>
+                        <td width="100px">操作</td>
+                    </tr>
+                </div>
+                </thead>
+                <tbody>
+                <div class="table_body">
+                    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$s): $mod = ($i % 2 );++$i;?><tr>
+                            <td>
+                                <?php if($s["msg_state"] == 0): ?><script>
+                                    document.write("  <img id=\"rmail_state\"  src=\"/managers/Public/images/index/nread.png\"  width=\"20px\">");
+                                </script>
+                                <?php else: ?>
+                                    <script>
+                                        document.write("  <img id=\"rmail_state\"  src=\"/managers/Public/images/index/hread.png\"  width=\"20px\">");
+                                    </script><?php endif; ?>
+
+                            </td>
+                            <?php if($s["msg_level"] == 紧急): ?><script>
+                                    document.write(" <td style='color: red' ><?php echo ($s["msg_sender"]); ?></td> <td style='color: red'><?php echo ($s["msg_theme"]); ?></td> <td style='color: red'><?php echo ($s["msg_time"]); ?></td>");
+                                </script>
+                                <?php else: ?>
+                                <script>
+                                    document.write("   <td><?php echo ($s["msg_sender"]); ?></td> <td><?php echo ($s["msg_theme"]); ?></td> <td><?php echo ($s["msg_time"]); ?></td>");
+                                </script><?php endif; ?>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn btn-success read" href="" data-vid="<?php echo ($s["msg_id"]); ?>">查看</button>
+                                    <button class="btn btn-warning" onclick="deleteMessage('<?php echo ($s["msg_id"]); ?>')">删除></button>
+                                    <script>
+                                        function deleteMessage(id) {
+                                            window.location.href="index.php/Admin/Administrator/deleteMessage?id=" + id;
+                                        }
+                                    </script>
+                                </div>
+                            </td>
+                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="write_form">
+            <form action="<?php echo U('Admin/Administrator/sendMessage');?>" method="post"  name="mail_form" id="mail_form">
+                <p class="mail_type"><b>紧急类型：</b>
+                    <select name="mail_type" id="mail_type" required>
+                        <option value="普通" clicked>普通</option>
+                        <option value="紧急">紧急</option>
+                    </select>
+                </p>
+                <p class="mail_theme"><b>主题：</b><input class="form1" type="text" name="mail_theme" id="mail_theme" size="30" value=""required></p>
+                <p class="mail_receive"><b>收件人：</b><input class="form1" type="text" name="mail_receive" id="mail_receive" size="30" value=""required></p>
+                <p class="mail_article"><b>正文：</b><textarea class="form1" rows="10" name="mail_article" id="mail_article"  value=""required></textarea></p>
+                <p class="submit"><input class="btn-default btn" type="submit"name="send"value="发送"></p>
+                <p class="back"><input class="btn-default btn" type="button"value="返回"></p>
+            </form>
+        </div>
+        <div class="read_form">
+            <form action="" method="post"  name="rmail_form" id="rmail_form">
+                <p class="rmail_type"><b>紧急类型：</b><input class="form1" type="text" name="rmail_type" id="rmail_type" size="30" value="" readonly></p>
+                <p class="rmail_theme"><b>主题：</b><input class="form1" type="text" name="rmail_theme" id="rmail_theme" size="30" value=""readonly></p>
+                <p class="rmail_article"><b>正文：</b><textarea class="form1" rows="10" clos="85" name="rmail_article" id="rmail_article"  value=""readonly></textarea></p>
+                <p class="rback"><input type="button"value="返回"></p>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

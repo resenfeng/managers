@@ -1,0 +1,18 @@
+[ 2016-09-09T20:48:37+08:00 ] 58.213.113.87 /managers/index.php/picture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+ERR: 无法加载模块:Picture
+
+[ 2016-09-09T20:48:52+08:00 ] 58.213.113.87 /managers/index.php/Public/images/seu2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000113s ]
+ERR: 无法加载模块:Public
+
+[ 2016-09-09T20:48:54+08:00 ] 58.213.113.87 /managers/index.php/Public/images/seu2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000144s ]
+ERR: 无法加载模块:Public
+

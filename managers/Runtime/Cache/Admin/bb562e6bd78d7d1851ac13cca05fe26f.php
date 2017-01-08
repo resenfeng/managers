@@ -14,11 +14,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="/managers/Public/css/club/font-awesome.css" rel="stylesheet">
 	<!-- jQuery -->
 	<script src="/managers/Public/js/club/jquery.min.js"></script>
-
-
-
 	<!----webfonts--->
-	<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+	<!--<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>-->
 	<!---//webfonts--->
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/managers/Public/js/club/bootstrap.min.js"></script>
@@ -29,30 +26,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="login-logo">
 	<a ><img src="/managers/Public/images/index/logo1.png" width="240" length="240" alt=""/></a>
 </div>
+
 <div class="app-cam">
-
-
 	<form action="<?php echo U('Admin/LoginReg/login');?>" method="post" id="form" name="user_form">
 		<div class="login-radio">
-			<p><label class="label_radio">
-				<input type="radio" name="seu" value="student" checked="">学生
-			</label>
+			<p>
 				<label class="label_radio">
-					<input type="radio" name="seu" value="admin" >学团联
+					<input type="radio" name="user_type" value="student" checked="">学生
+				</label>
+				<label class="label_radio">
+					<input type="radio" name="user_type" value="seu" >学团联
 				</label>
 
 				<label class="label_radio">
-					<input type="radio" name="seu" value="club">社团
-				</label></p>
+					<input type="radio" name="user_type" value="club">社团
+				</label>
+			</p>
 		</div>
 		<input type="text" class="text" id="account" name="user_name" value="" placeholder="请输入账号（学生账户为一卡通号）">
 		<input type="password" id="pwd" name="user_password" value="" placeholder="密码" >
-		<div class="submit"><input type="submit" id="login" name="login" value="登录" onclick="return check();"></div>
+		<div class="submit">
+			<input type="submit" id="loginSubmit" name="login" value="登录" onclick="return check();">
+		</div>
+	</form>
 </div>
-<div class="loginbottom">
-	<p align="center"><span align="right"><a  href="<?php echo U('Admin/LoginReg/register');?>">注册新账号</a></span><b>|</b><span><a href="#">忘记密码?</a></span></p>
-</div>
-</form>
 
+<div class="loginbottom">
+	<p align="center">
+		<span align="right">
+			<a  href="<?php echo U('Admin/LoginReg/register');?>">注册新账号</a>
+		</span>
+		<b>|</b>
+		<span>
+			<a href="#">忘记密码?</a>
+		</span>
+	</p>
+</div>
 </body>
 </html>

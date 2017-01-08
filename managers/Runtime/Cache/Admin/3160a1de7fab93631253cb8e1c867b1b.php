@@ -16,7 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/managers/Public/js/index/jquery-2.1.4.min.js"></script>
     <script src="/managers/Public/js/index/register_form.js"></script>
     <!----webfonts--->
-    <link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>-->
     <!---//webfonts--->
     <!-- Bootstrap Core JavaScript -->
     <script src="/managers/Public/js/club/bootstrap.min.js"></script>
@@ -65,31 +65,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </p>
 </div>
 <div class="form">
-    <form class="form-signin app-cam" action="<?php echo U('Admin/LoginReg/register');?>" name="user_form">
+    <form class="form-signin app-cam" action="<?php echo U('Admin/LoginReg/register');?>" name="user_form" method="post">
 
         <input type="text" class="form-control1" name="user_name" placeholder="用户名／一卡通号" autofocus="">
         <input type="text" class="form-control1" name="user_email" placeholder="Email" autofocus="">
         <input type="text" class="form-control1" name="user_phone" placeholder="手机号" autofocus="">
 
         <div class="form-control3" >
-            <p><b type="text1">性别：</b> <label class="label_radio">
-                <input type="radio" name="user_sex" checked=""> Famale
-            </label>
+            <p>
+                <b type="text1">性别：</b>
                 <label class="label_radio">
-                    <input type="radio" name="user_sex" > Male
+                    <input type="radio" name="user_sex" value="女"> Famale
                 </label>
-
                 <label class="label_radio">
-                    <input type="radio" name="user_sex"> Secret
-                </label></p>
+                    <input type="radio" name="user_sex" value="男"> Male
+                </label>
+                <label class="label_radio">
+                    <input type="radio" name="user_sex" value="保密"> Secret
+                </label>
+            </p>
         </div>
-
-
         <input type="password" class="form-control1" name="user_password" placeholder="密码" autofocus="">
         <input type="password" class="form-control1" name="user_repassword" placeholder="确认密码" autofocus="">
         <div style="width:300px;">
-            <div style="width:150px;float:left;"><input type="text1" class="form-control1" name="vacode" placeholder="验证码" autofocus=""></div>
+            <div style="width:150px;float:left;">
+                <input type="text1" class="form-control1" name="vacode" placeholder="验证码" autofocus="">
+            </div>
             <!--<div style="width:150px;float:left;"><input type="button" class="form-control1" name="user_vacode" value="获得验证码" onclick="showcode()"></div>-->
+            <!--<img class="verify" src="http://112.124.107.125:8011/index.php/Admin/Verify/verify" onclick="this.src='http://112.124.107.125:8011/index.php/Admin/Verify/verify'+'?'+Math.random()">-->
             <img class="verify" src="http://58.213.164.146:8011/managers/index.php/Admin/Verify/verify" onclick="this.src='http://58.213.164.146:8011/managers/index.php/Admin/Verify/verify'+'?'+Math.random()">
         </div>
 
@@ -102,16 +105,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <button class="btn btn-lg btn-success1 btn-block" type="submit" name="submit" onclick="return check();">提交</button>
         <div class="registerbottom">
             已经注册过了:
-            <a  href="<?php echo U('Admin/LoginReg/login');?>">
-                登录
-            </a>
+            <a  href="<?php echo U('Admin/LoginReg/login');?>">登录</a>
         </div>
-
-
     </form>
 </div>
-<div class="copy_layout login register">
-
-</div>
+<div class="copy_layout login register"></div>
 </body>
 </html>

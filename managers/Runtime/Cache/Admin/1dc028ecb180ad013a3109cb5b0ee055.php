@@ -1,0 +1,263 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <title>Unicorn a Corporate Category Flat Bootstarp responsive Website Template| Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Unicorn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstarp-css -->
+    <link href="/managers/Public/css/other/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// bootstarp-css -->
+    <!-- css -->
+    <link rel="stylesheet" href="/managers/Public/css/other/style2.css" type="text/css" media="all" />
+    <!--// css -->
+    <script src="/managers/Public/js/other/jquery-1.11.0.min.js"></script>
+    <!--fonts-->
+    <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
+    <!--/fonts-->
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="/managers/Public/js/other/move-top.js"></script>
+    <script type="text/javascript" src="/managers/Public/js/other/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+        .slides {
+            padding: 0;
+            width: 1409px;
+            height: 0px;
+            display: block;
+            margin: 0 auto;
+            position: inherit;
+        }
+
+        .slides * {
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .slides input { display: none; }
+
+        .slide-container { display: block; }
+
+        .nav label {
+            width: 150px;
+            height: 500%;
+            display: none;
+            position: absolute;
+
+            opacity: 0;
+            z-index: 9;
+            cursor: pointer;
+
+            transition: opacity .8s;
+
+            color: #f0f0f0;
+            font-size: 156pt;
+            text-align: center;
+            line-height: 580px;
+            font-family: "Varela Round", sans-serif;
+            /*background-color: rgba(255, 255, 255, .3);*/
+            text-shadow: 0px 0px 15px rgb(119, 119, 119);
+        }
+
+        .slide:hover + .nav label { opacity: 0.5; }
+
+        .nav label:hover { opacity: 1; }
+
+        .nav .next { right: 0; }
+
+        input:checked + .slide-container  .slide {
+            opacity: 1;
+
+            transform: scale(1);
+
+            transition: opacity 1s ease-in-out;
+        }
+
+        input:checked + .slide-container .nav label { display: block; }
+    </style>
+    <!--start-smoth-scrolling-->
+</head>
+<body>
+<ul class="slides">
+    <input type="radio" name="radio-btn" id="img-1" checked />
+    <li class="slide-container">
+        <div class="nav">
+            <a href="<?php echo U('Admin/Index/jpActIndex');?>"><label class="prev">&#x2039;</label></a>
+            <a href="<?php echo U('Admin/Index/jpActIndex3');?>"><label class="next">&#x203a;</label></a>
+        </div>
+    </li>
+</ul>
+<div class="container">
+    <div class="header">
+        <div class="header-info-right">
+            <div class="header cbp-spmenu-push">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+                    <a href="<?php echo U('Admin/Index/index');?>">主页</a>
+                    <a href="<?php echo U('Admin/LoginReg/login');?>">登录注册</a>
+                </nav>
+                <!--script-nav -->
+                <script>
+                    $("span.menu").click(function(){
+                        $("ul.navigatoin").slideToggle("300" , function(){
+                        });
+                    });
+                </script>
+                <script type="text/javascript">
+                    jQuery(document).ready(function($) {
+                        $(".scroll").click(function(event){
+                            event.preventDefault();
+                            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                        });
+                    });
+                </script>
+                <div class="clearfix"> </div>
+                <!-- /script-nav -->
+                <div class="main">
+                    <section class="buttonset">
+                        <button id="showRightPush"><img src="/managers/Public/images/other/menu.png" /></button>
+                    </section>
+                </div>
+                <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+                <script src="/managers/Public/js/other/classie.js"></script>
+                <script>
+                    var	menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+                            showRightPush = document.getElementById( 'showRightPush' ),
+                            body = document.body;
+
+                    showRightPush.onclick = function() {
+                        classie.toggle( this, 'active' );
+                        classie.toggle( body, 'cbp-spmenu-push-toleft' );
+                        classie.toggle( menuRight, 'cbp-spmenu-open' );
+                        disableOther( 'showRightPush' );
+                    };
+                </script>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--<div class="fact" style="background-image:url('<?php echo ($show["act_pic"]["0"]); ?>');">-->
+<div class="fact">
+    <!--<div class="fact" style="background-image:url('<?php echo ($show["act_pic"]["0"]); ?>');height:140px;width:1300px;">-->
+    <div class="container">
+        <div class="fact-top">
+            <h3>精品活动名称</h3>
+            <div class="fact-bottom">
+                <div class="fact-one">
+                    <?php if($show["club_name"] == NULL): ?><h1>没有社团的精品活动了，向左或向右看看</h1><?php endif; ?>
+                    <b><h1><?php echo ($show["act_name"]); ?></h1></b>
+                </div>
+            </div>
+            <span> </span>
+        </div>
+    </div>
+</div>
+<!--fact-ends-->
+<!--product-starts-->
+<div class="product">
+    <div class="container">
+        <div class="product-main">
+            <div class="product-top">
+                <div class="col-md-6 product-left">
+                    <h4>活动内容一</h4>
+                    <p><?php echo ($show["act_context1"]); ?></p>
+                </div>
+                <div class="col-md-6 product-right">
+                    <img src="<?php echo ($show["act_pic"]["1"]); ?>" width="550px" height="450px" alt=""/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="product-top">
+                <div class="col-md-6 product-right">
+                    <img src="<?php echo ($show["act_pic"]["2"]); ?>" width="550px" height="450px" alt=""/>
+                </div>
+                <div class="col-md-6 product-left">
+                    <h4>活动内容二</h4>
+                    <p><?php echo ($show["act_context2"]); ?></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="product-top">
+                <div class="col-md-6 product-left">
+                    <h4>活动内容三</h4>
+                    <p><?php echo ($show["act_context3"]); ?></p>
+                </div>
+                <div class="col-md-6 product-right">
+                    <img src="<?php echo ($show["act_pic"]["3"]); ?>" width="550px" height="450px" alt=""/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--product-ends-->
+<!--tweets-starts-->
+<div class="tweets">
+    <div class="container">
+        <div class="tweets-main">
+            <video width="800" height="500" controls="controls">
+                <source src="<?php echo ($show["act_video"]); ?>" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+<!--tweets-ends-->
+<!--footer-starts-->
+<div class="footer" id="hello">
+    <div class="container">
+        <div class="footer-top">
+            <div class="col-md-6 footer-left">
+                <div class="contact-text">
+                    <input type="text" value="邮箱: <?php echo ($show["manager_email"]); ?>" readonly="readonly"/>
+                    <input type="text" value="负责人: <?php echo ($show["manager_name"]); ?>" readonly="readonly"/>
+                    <br>
+                    <input type="text" value="联系方式:  <?php echo ($show["manager_phone"]); ?>" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="col-md-6 footer-right">
+                <div class="col-md-4 footer-links">
+                    <h4>我们的二维码</h4>
+                    <ul>
+                        <img src="<?php echo ($show["act_pic"]["4"]); ?>" width="260" height="260"/>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+             var defaults = {
+             containerID: 'toTop', // fading element id
+             containerHoverID: 'toTopHover', // fading element hover id
+             scrollSpeed: 1200,
+             easingType: 'linear'
+             };
+             */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</div>
+<!--footer-ends-->
+</body>
+</html>

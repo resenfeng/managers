@@ -7,8 +7,6 @@ return array(
 //    'TOKEN_TYPE'    =>    'md5',  //令牌哈希验证规则 默认为MD5
 //    'TOKEN_RESET'   =>    true,  //令牌验证出错后是否重置令牌 默认为true
 
-    'CONTROL_MENU'  =>   "导航：<a href='index.php?m=Admin&c=Index&a=index'>控制台</a>",
-
     /*URL_MODEL*/
     'URL_MODEL' => 0,
     'URL_ROUTER_ON' => false,

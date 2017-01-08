@@ -1,0 +1,172 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/managers/Public/css/student/studentstyle.css" />
+    <script type="text/javascript" src="/managers/Public/js/student/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="/managers/Public/js/student/student.js"></script>
+    <style>
+        body{
+            background-image: url("/managers/Public/images/student/bg.jpg");
+            background-size: 100%;
+            background-repeat:no-repeat; /*是否重复*/
+            background-attachment:fixed;/*是否随滚动条固定*/
+            background-position:center;/*背景图开始位置*/
+        }
+
+        #club_join{
+            position:absolute;
+            left: 40%;
+        }
+        .back{
+            background-color: rgba(205, 246, 253, 0.4);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #club_join b{
+            position: relative;
+            right: 50%;
+        }
+        .native_place{
+            position: relative;
+
+        }
+        .apply_club{
+            position: relative;
+            right: 0%;
+        }
+        .apply_hobby{
+            position: relative;
+            right: 0%;
+        }
+        .birthday{
+            position: relative;
+            right:0%;
+        }
+        .apply_phone{
+            position: relative;
+            right: 0%;
+        }
+        .apply_introduce{
+            position: relative;
+            right: 0%;
+        }
+        .work_experience{
+            position: relative;
+            right: 0%;
+        }
+        .club_advice{
+            position: relative;
+            right: 0%;
+        }
+        .btn2{
+            width: 70px;
+            height: 30px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: #65cea7;
+            left: 40%;
+            position: relative;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="nav-top">
+    <span>社团管理个人界面</span>
+    <div class="nav-topright">
+
+    </div>
+</div>
+<div class="nav-down">
+    <div class="leftmenu1">
+        <div class="menu-oc"><img src="/managers/Public/images/student/menu-all.png" /></div>
+        <ul>
+            <li>
+                <a class="a_list a_list1">个人管理</a>
+                <div class="menu_list menu_list_first">
+                    <a class="lista_first" href="<?php echo U('Admin/Student/stuInfo');?>">个人信息</a>
+                    <a href="<?php echo U('Admin/Student/applyClub');?>" >参加社团 </a>
+                    <a href="<?php echo U('Admin/Student/clubEstablish');?>">成立社团</a>
+
+                    <a href="<?php echo U('Admin/LoginReg/editPwd');?>">修改密码</a>
+                    <a href="<?php echo U('Admin/LoginReg/logout');?>">注销登录</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="leftmenu2">
+        <div class="menu-oc1"><img src="/managers/Public/images/student/menu-all.png" /></div>
+        <ul>
+            <li>
+                <a class="j_a_list j_a_list1"></a>
+                <div class="j_menu_list j_menu_list_first">
+                    <span class="sp1"><i></i>个人管理</span>
+                    <a class="j_lista_first" href="<?php echo U('Admin/Student/stuInfo');?>">个人信息</a>
+                    <a href="<?php echo U('Admin/Student/applyClub');?>" >参加社团</a>
+                    <a href="<?php echo U('Admin/Student/clubEstablish');?>">成立社团</a>
+
+                    <a href="<?php echo U('Admin/LoginReg/editPwd');?>">修改密码</a>
+                    <a href="<?php echo U('Admin/LoginReg/logout');?>">注销登录</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="rightcon">
+        <div class="right_con">
+            <div class="info_page">
+
+                <div class="back" id="club_join" >
+                    <h2>社团报名申请表</h2>
+                    <form action="<?php echo U('Admin/Student/applyClub');?>" method="post">
+                        <table border="0" style="height: 800px;width: 400px;text-align: center">
+                            <tr  ><td>姓名：</td><td width="200px" height="40px"><input type="text" class="apply_name" name="recruit_name" value=""/></td></tr>
+                            <tr><td>性别:</td><td><label>男<input type="radio" class="male" name="recruit_sex" value="male"/></label><label>女<input type="radio" class="female" name="sex" value=""/></label></td></tr>
+                            <tr><td>年级：</td><td><input type="text" class="apply_grade" name="recruit_grade" value=""/></td></tr>
+                            <tr><td>年龄：</td><td><input type="text" class="apply_age" name="recruit_age" value=""/></td></tr>
+                            <tr><td>院系：</td><td><input type="text" class="apply_academy" name="recruit_academy" value=""/></td></tr>
+                            <tr><td>籍贯:</td><td><input type="text" class="native_place" name="recruit_area" value=""/></td></tr>
+                            <tr><td>意向社团：</td><td><input type="text" class="apply_club" name="recruit_club" value=""/></td></tr>
+                            <tr><td>服从调剂:</td><td><label>是<input type="radio" class="yes" name="recruit_exchange" value="1"/></label><label>否<input type="radio" class="no" name="apply_adjust" value="0"/></label></td></tr>
+                            <tr><td>兴趣爱好:</td><td><input type="text" class="apply_hobby" name="recruit_hobby" value=""/></td></tr>
+                            <tr><td>出生日期：</td><td><input type="date" class="birthday" name="recruit_birthday" value=""/></td></tr>
+                            <tr><td>联系方式：</td><td><input type="text" class="apply_phone" name="recruit_phone" value=""/></td></tr>
+                            <tr><td>个人简介：</td><td><input type="text" class="apply_introduce" name="recruit_intro" value=""/></td></tr>
+                            <tr><td>工作经历：</td><td><input type="text" class="work_experience" name="recruit_exp" value=""/></td></tr>
+                            <tr><td>对社团建议：</td><td><input type="text" class="club_advice" name="recruit_advice" value=""/></td></tr>
+                        </table>
+                        <div>
+                            <input type="submit" value="提交" class="btn2" name="btn2" onclick="submit()"/>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function  showinfo() {
+        document.getElementById("info_display").style.display="block";
+        document.getElementById("info_change").style.display="none";
+        document.getElementById("club_join").style.display="none";
+    }
+    function showchange() {
+        document.getElementById("info_display").style.display="none";
+        document.getElementById("info_change").style.display="block";
+        document.getElementById("club_join").style.display="none";
+    }
+    function showclubjoin() {
+        document.getElementById("info_display").style.display="none";
+        document.getElementById("club_join").style.display="block";
+        document.getElementById("info_change").style.display="none";
+    }
+</script>
+</html>
