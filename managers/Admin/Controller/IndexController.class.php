@@ -35,7 +35,7 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
@@ -62,7 +62,7 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
@@ -91,7 +91,7 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
@@ -121,13 +121,13 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
 		$result[0]["act_pic"] = $data;
 
-		$result[0]["act_video"] = "http://58.213.164.146:8011/managers/video/".$result[0]["act_video"];
+		$result[0]["act_video"] = "http://123.207.189.96:8086/managers/video/".$result[0]["act_video"];
 
 		$this->assign("show", $result[0]);
 		$this->display();
@@ -151,13 +151,13 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
 		$result[1]["act_pic"] = $data;
 
-		$result[1]["act_video"] = "http://58.213.164.146:8011/managers/video/".$result[1]["act_video"];
+		$result[1]["act_video"] = "http://123.207.189.96:8086/managers/video/".$result[1]["act_video"];
 
 		$this->assign("show", $result[1]);
 		$this->display();
@@ -181,14 +181,14 @@ class IndexController extends Controller{
 
 		$i = 0;
 		foreach ($picture as $value){
-			$data[$i] = "http://58.213.164.146:8011/managers/picture/".$value;
+			$data[$i] = "http://123.207.189.96:8086/managers/picture/".$value;
 			$i++;
 		}
 
 		$result[2]["act_pic"] = $data;
 
-		$result[2]["act_video"] = "http://58.213.164.146:8011/managers/video/".$result[2]["act_video"];
-		
+		$result[2]["act_video"] = "http://123.207.189.96:8086/managers/video/".$result[2]["act_video"];
+
 		$this->assign("show", $result[2]);
 		$this->display();
 	}

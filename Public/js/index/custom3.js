@@ -108,7 +108,7 @@ $(document).ready(function() {
             $.ajax({
                 type : "post",
                 async : false,
-                url : "http://112.124.107.125:8011/index.php/Admin/Administrator/getPicture",
+                url : "http://123.207.189.96:8086/index.php?m=Admin&c=Administrator&a=getPicture",
                 dataType : 'json',
                 data : {
                     "key" : "check"
@@ -120,6 +120,7 @@ $(document).ready(function() {
                     // alert("照片提取成功");
                 },
                 error : function (data) {
+
                     alert("照片提取失败");
                 }
             })
@@ -129,11 +130,12 @@ $(document).ready(function() {
                 // "http://58.213.164.146:8011/managers/picture/roll/seu1.jpg",
                 // "http://58.213.164.146:8011/managers/picture/roll/seu4.jpg",
                 // "http://58.213.164.146:8011/managers/picture/roll/seu5.jpg",
-                temp[0],
+                // temp[0],
                 temp[1],
                 temp[2],
                 temp[3],
                 temp[4],
+                temp[5]
             ],  {duration: 2000, fade: 750});
         });
     })

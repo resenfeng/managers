@@ -1532,10 +1532,12 @@ class AdministratorController extends Controller{
         $result = $picture->field("picture_name")->select();
 
         $i = 0;
+        $data = array();
         foreach ($result as $value){
-            $data[$i] = "http://112.124.107.125:8011/picture/".$value["picture_name"];
+            $data[$i] = "http://123.207.189.96:8086/picture/".$value["picture_name"];
             $i++;
         }
+        console.log(json_encode($data));
         echo json_encode($data);
     }
 }

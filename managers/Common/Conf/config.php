@@ -3,11 +3,11 @@ return array(
 
     //数据库设置
     'DB_TYPE'   => 'mysql', // 数据库类型
-    'DB_HOST'   => '112.124.107.125', // 服务器地址
+    'DB_HOST'   => '123.207.189.96', // 服务器地址
     'DB_NAME'   => 'managerSystem', // 数据库名
     'DB_USER'   => 'manager', // 用户名
-    'DB_PWD'    => 'manager', // 密码
-    'DB_PORT'   => '13003', // 端口
+    'DB_PWD'    => 'manageradmin', // 密码
+    'DB_PORT'   => '3306', // 端口
     'DB_PREFIX' => 'ms_', // 数据库表前缀
 
     /* SESSION设置 */
